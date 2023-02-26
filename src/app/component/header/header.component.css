@@ -16,5 +16,10 @@
 
 .menu{
     margin-right: 40px;
+    
+}
+
+.menu_enlace{
     text-decoration: none;
+    color: var(--fontColorW);
 }
