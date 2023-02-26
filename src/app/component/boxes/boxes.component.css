@@ -1,0 +1,26 @@
+.boxes{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+.box1{
+    background-color: var(--transparentBlack);
+    width: 300px;
+    height: 450px;
+    border-radius: 5px 0px 0px 5px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    color: var(--fontColorW)
+}
+
+.box2{
+    background-color: var(--transparentBlack);
+    width: 300px;
+    height: 450px;
+    border-radius: 0px 5px 5px 0px;
+}

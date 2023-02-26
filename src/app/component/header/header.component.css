@@ -15,12 +15,11 @@
 
 .menu {
     margin-right: 40px;
-    gap: 20px;
-
 }
 
 .menu_enlace {
     text-decoration: none;
     color: var(--fontColorW);
     font-weight: 400;
+    margin-right: 40px;
 }
