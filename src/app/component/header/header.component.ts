@@ -8,13 +8,5 @@ import { Usuario } from 'src/app/models/usuario';
 })
 
 
-export class HeaderComponent implements OnInit{
-  public miUsuario: Usuario
-  constructor()
-  {
-    this.miUsuario = new Usuario (1, "Lorena", "Lopez", "lorena@lopez.com", "www.lorenalopez.es")
-  }
+export class HeaderComponent {}
 
-  ngOnInit():void{}
-
-}

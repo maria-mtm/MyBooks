@@ -1,6 +1,28 @@
-<app-header></app-header>
-<div class="main_perfil">
-    <router-outlet></router-outlet>
-</div>
+<div class="boxes">
+    <div class="box1">
+        <h2>{{miUsuario.nombre}} {{miUsuario.apellidos}}</h2>
+        <hr>
+        <div>
+            <b>ID:</b> {{miUsuario.id_usuario}}<br>
+            <b>Nombre:</b> {{miUsuario.nombre}}<br>
+            <b>Apellidos:</b> {{miUsuario.apellidos}}<br>
+            <b>Correo:</b> {{miUsuario.correo}}<br>
+            <b>url:</b> {{miUsuario.url}}
+        </div>
+    </div>
+    <div class="box2">
 
-<app-footer></app-footer>
+        <h2>Editar datos</h2>
+        <hr>
+
+        <div><input type="number" placeholder="ID" #inputId /></div><br>
+        <div><input type="text" placeholder="Nombre" #inputNombre /></div><br>
+        <div><input type="text"  placeholder="Apellidos" #inputApellidos /></div><br>
+        <div><input type="text" placeholder="Correo" #inputCorreo /></div><br>
+        <div><input type="text" placeholder="url" #inputUrl /></div>
+
+        <div class="box2_buttons">
+            <button on-click=modificar(inputId,inputNombre,inputApellidos,inputCorreo,inputUrl)>Modificar</button>
+        </div>
+    </div>
+</div>

@@ -13,4 +13,5 @@ export class Usuario {
         this.correo = correo;
         this.url = url;
     }
+
 }
