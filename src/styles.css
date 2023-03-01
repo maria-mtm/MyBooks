@@ -4,6 +4,7 @@
 
     --primaryColor: rgb(53, 176, 163);
     --secondaryColor: rgb(68, 68, 68);
+    --transparentBlack: rgba(0, 47, 28, 0.301);
     --fontColorB: black;
     --fontColorW: white;
     --fontStyle: sans-serif;
