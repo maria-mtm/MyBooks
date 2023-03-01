@@ -21,4 +21,5 @@
 .menu_enlace{
     text-decoration: none;
     color: var(--fontColorW);
+    margin-right: 40px;
 }
