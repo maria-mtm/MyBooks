@@ -14,7 +14,7 @@
 <ng-template #esFalso>
     Hay igual o mas de 2
 </ng-template> -->
-
+<div class="main_libros">
 <div class="form_addBooks">
 
     <h2>Añadir Libros:</h2>
@@ -33,7 +33,7 @@
 
 
 <div class="allcards">
-    <div class="card" *ngFor="let librito of libros">
+    <!-- <div class="card" *ngFor="let librito of libros">
         ID Libro: {{librito.id_libro}}
         ID Usuario: {{librito.id_usuario}}
         <br>
@@ -41,9 +41,21 @@
         <h4>Autor:</h4>{{librito.autor}} <br>
         <h4>Precio:</h4>{{librito.precio}} euros<br>
         <h4>Foto:</h4>{{librito.photo}} <br>
+    </div> -->
+    <ng-container *ngFor="let librito of libros; let i = index">
+    <div class="card">
+        <img src="{{librito.photo}}"/><br><br>
+        <h5>ID Libro: {{librito.id_libro}}
+        ID Usuario: {{librito.id_usuario}}</h5>
+        <br>
+        <h4>Titulo:</h4> {{librito.titulo}} <br>
+        <h4>Autor:</h4>{{librito.autor}} <br>
+        <h4>Precio:</h4>{{librito.precio}} euros
     </div>
+</ng-container>
 </div>
 
 <div class="mensajeNoHay"*ngIf="libros.length===0">
     <h2>No hay libros disponibles.</h2>
+</div>
 </div>

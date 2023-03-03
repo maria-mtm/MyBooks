@@ -11,21 +11,21 @@ export class LibrosComponent implements OnInit{
   constructor()
   {
 
-    // this.libros=[]
+    this.libros=[]
     this.libros=[
-      new Libro(1,2,"Casita azul", "Carlos", 25, "photo_casitaazul"),
+      new Libro(1,2,"Casita azul", "Carlos", 25, "https://imagenes.elpais.com/resizer/sMWeM3Z0awXbSkNaTMExLR_QNLU=/1200x0/arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/YC5XJK5X2DES4MGR2W3HWWS7JU.jpg"),
       new Libro(2,4,"Mis memorias", "Inma", 28, "photo_mismemorias")
     ]
   }
   public add(inputId_libro:HTMLInputElement, inputId_usuario:HTMLInputElement,inputTitulo:HTMLInputElement,inputAutor:HTMLInputElement,inputPrecio:HTMLInputElement, inputPhoto:HTMLInputElement){
-    
-    this.libros[0].id_libro=inputId_libro.valueAsNumber;
-    this.libros[0].id_usuario=inputId_usuario.valueAsNumber;
-    this.libros[0].titulo=inputTitulo.value;
-    this.libros[0].autor=inputAutor.value;
-    this.libros[0].precio=inputPrecio.valueAsNumber;
-    this.libros[0].photo=inputPhoto.value;
-   
+    this.libros.push(new Libro(
+    inputId_libro.valueAsNumber,
+    inputId_usuario.valueAsNumber,
+    inputTitulo.value,
+    inputAutor.value,
+    inputPrecio.valueAsNumber,
+    inputPhoto.value
+    ))
   }
   ngOnInit(): void {}
   
