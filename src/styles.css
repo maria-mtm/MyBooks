@@ -3,6 +3,7 @@
 :root {
 
     --primaryColor: rgb(53, 176, 163);
+    --primaryColorOsc: rgb(32, 119, 110);
     --secondaryColor: rgb(68, 68, 68);
     --transparentBlack: rgba(0, 47, 28, 0.301);
     --fontColorB: black;

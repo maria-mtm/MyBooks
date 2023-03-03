@@ -1,0 +1,22 @@
+.allcards{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+
+}
+
+
+.card {
+    width: 240px;
+    height: 180px;
+    background-color: var(--primaryColorOsc);
+    border-radius: 5px;
+    color:var(--fontColorW);
+    padding: 10px 10px 10px 10px;
+}
+
+.mensajeNoHay{
+    color: var(--primaryColorOsc)
+}

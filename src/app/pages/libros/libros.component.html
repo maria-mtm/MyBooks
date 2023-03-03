@@ -1,1 +1,33 @@
-<p>libros works!</p>
+<!-- <div>
+    <h2>LIBROS</h2>
+    <ul>
+        <li *ngFor="let librito of libros">
+            Titulo: {{librito.titulo}}  Autor: {{librito.autor}}
+        </li>
+    </ul>
+</div>
+{{libros[0].titulo}} -->
+
+
+
+<!-- <div *ngIf="libros.length<2; else esFalso">
+   Hay menos de 2
+</div>
+<ng-template #esFalso>
+    Hay igual o mas de 2
+</ng-template> -->
+<div class="allcards">
+    <div class="card" *ngFor="let librito of libros">
+        ID Libro: {{librito.id_libro}}
+        ID Usuario: {{librito.id_usuario}}
+        <br>
+        <h4>Titulo:</h4> {{librito.titulo}} <br>
+        <h4>Autor:</h4>{{librito.autor}} <br>
+        <h4>Precio:</h4>{{librito.precio}} euros<br>
+        <h4>Foto:</h4>{{librito.photo}} <br>
+    </div>
+</div>
+
+<div class="mensajeNoHay"*ngIf="libros.length===0">
+    <h2>No hay libros disponibles.</h2>
+</div>

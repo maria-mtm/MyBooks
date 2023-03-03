@@ -11,11 +11,11 @@ export class LibrosComponent implements OnInit{
   constructor()
   {
 
-    // this.libros=[]
-    this.libros=[
-      new Libro(1,2,"Casita azul", "Carlos", 25, "photo_casitaazul"),
-      new Libro(2,4,"Mis memorias", "Inma", 28, "photo_mismemorias")
-    ]
+    this.libros=[]
+    // this.libros=[
+    //   new Libro(1,2,"Casita azul", "Carlos", 25, "photo_casitaazul"),
+    //   new Libro(2,4,"Mis memorias", "Inma", 28, "photo_mismemorias")
+    // ]
   }
   ngOnInit(): void {}
   
