@@ -20,3 +20,45 @@
 .mensajeNoHay{
     color: var(--primaryColorOsc)
 }
+
+.form_addBooks{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--transparentBlack);
+    width: 300px;
+    height: 450px;
+}
+
+.form_addBooks input{
+
+    padding: 2px 2px 2px 2px;
+    height: 35px;
+    width: 200px;
+    border: 1px solid var(--primaryColor);
+    border-radius: 5px;
+    
+}
+
+
+.AD_buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.AD_buttons button{
+    background-color: var(--primaryColor);
+    border:none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    color: var(--fontColorW);
+}
+::placeholder{
+    text-align: center;
+    font-size: medium;
+    
+}

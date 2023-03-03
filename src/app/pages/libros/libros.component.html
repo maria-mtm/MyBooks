@@ -8,14 +8,30 @@
 </div>
 {{libros[0].titulo}} -->
 
-
-
 <!-- <div *ngIf="libros.length<2; else esFalso">
    Hay menos de 2
 </div>
 <ng-template #esFalso>
     Hay igual o mas de 2
 </ng-template> -->
+
+<div class="form_addBooks">
+
+    <h2>Añadir Libros:</h2>
+    <br>
+    <div><input type="number" placeholder="ID Libro" #inputId_libro /></div><br>
+    <div><input type="number" placeholder="ID Usuario" #inputId_usuario /></div><br>
+    <div><input type="text" placeholder="Titulo" #inputTitulo /></div><br>
+    <div><input type="text"  placeholder="Autor" #inputAutor /></div><br>
+    <div><input type="number" placeholder="Precio" #inputPrecio /></div><br>
+    <div><input type="text" placeholder="Foto" #inputPhoto /></div>
+
+    <div class="AB_buttons">
+        <button on-click=add(inputId_libro,inputId_usuario,inputTitulo,inputAutor,inputPrecio,inputPhoto)>Añadir</button>
+    </div>
+</div>
+
+
 <div class="allcards">
     <div class="card" *ngFor="let librito of libros">
         ID Libro: {{librito.id_libro}}
