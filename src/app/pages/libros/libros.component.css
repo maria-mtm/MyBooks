@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     min-height: 80vh;
+    gap: 10px;
 
 }
 
@@ -53,7 +54,20 @@
     padding:30px 30px 30px 30px;
 }
 
-.form_addBooks input{
+.form_addBooks_search{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--transparentBlack);
+    width: 460px;
+    min-height: 80px;
+    border-radius: 5px;
+    border:2px solid var(--primaryColor);
+    padding:30px 30px 30px 30px;
+}
+
+.form_addBooks input, .form_addBooks_search input{
 
     padding: 2px 2px 2px 2px;
     height: 35px;
@@ -78,6 +92,24 @@
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
     color: var(--fontColorW);
+}
+
+.closedbutton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.closedbutton button{
+    background-color: rgb(113, 4, 4);
+    border:none;
+    border-radius: 100%;
+    color: var(--fontColorW);
+    width:20px;
+    height: 20px;
+
 }
 ::placeholder{
     text-align: center;
