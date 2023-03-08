@@ -32,7 +32,6 @@ export class ServicioService {
     }
   }
 
-
   public add(libro: Libro): void {
     this.libros.push(libro)
   }

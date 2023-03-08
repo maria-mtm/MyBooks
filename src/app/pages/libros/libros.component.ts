@@ -42,8 +42,5 @@ export class LibrosComponent implements OnInit {
 
   }
 
-
-
-
   ngOnInit(): void { }
 }
