@@ -7,38 +7,43 @@ import { ServicioService } from 'src/app/shared/servicio.service';
   templateUrl: './libros.component.html',
   styleUrls: ['./libros.component.css']
 })
-export class LibrosComponent implements OnInit{
+export class LibrosComponent implements OnInit {
   public libros: Libro[];
 
-  constructor(public ServicioService: ServicioService)
-  {
-//estoy igualando la nueva variable libros al libros que hay en servicioService que ya contiene el array de Libros
-  // this.libros=this.ServicioService.libros
-  this.libros=this.ServicioService.getAll()
-  
+  constructor(public ServicioService: ServicioService) {
+
+    //estoy igualando la nueva variable libros al libros que hay en servicioService que ya contiene el array de Libros
+    // this.libros=this.ServicioService.libros
+    this.libros = this.ServicioService.getAll()
+
   }
 
-  // add(id_libro:number, id_usuario:number,titulo:string, autor:string, precio: number, photo:string ){
-  //   this.ServicioService.libros.push(new Libro(id_libro, id_usuario, titulo, autor, precio, photo));
+  //AQUI SE "LLAMAN" LAS FUNCIONES CREADAS EN EL SERVICE
 
-  //   console.log(this.ServicioService.libros)
-  // }
-  public add(inputId_libro:HTMLInputElement, inputId_usuario:HTMLInputElement,inputTitulo:HTMLInputElement,inputAutor:HTMLInputElement,inputPrecio:HTMLInputElement, inputPhoto:HTMLInputElement){
-    this.ServicioService.libros.push(new Libro(
-    inputId_libro.valueAsNumber,
-    inputId_usuario.valueAsNumber,
-    inputTitulo.value,
-    inputAutor.value,
-    inputPrecio.valueAsNumber,
-    inputPhoto.value
+  public add(inputId_libro: HTMLInputElement, inputId_usuario: HTMLInputElement, inputTitulo: HTMLInputElement, inputAutor: HTMLInputElement, inputPrecio: HTMLInputElement, inputPhoto: HTMLInputElement) {
+    this.ServicioService.add(new Libro(
+      inputId_libro.valueAsNumber,
+      inputId_usuario.valueAsNumber,
+      inputTitulo.value,
+      inputAutor.value,
+      inputPrecio.valueAsNumber,
+      inputPhoto.value
     ))
     console.log(this.ServicioService.libros)
   }
 
-  public getOne(inputIds_libro:HTMLInputElement){
-    this.ServicioService.getOne(inputIds_libro.valueAsNumber)
+  public getOne(inputIds_libro: HTMLInputElement): void {
+    this.libros = [this.ServicioService.getOne(inputIds_libro.valueAsNumber)];
+
   }
 
-  ngOnInit(): void {}
-  
+  public delete(inputId_libro:HTMLInputElement):void{
+    this.ServicioService.delete(inputId_libro.valueAsNumber)
+
+  }
+
+
+
+
+  ngOnInit(): void { }
 }

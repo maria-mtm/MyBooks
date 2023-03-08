@@ -23,3 +23,8 @@
     color: var(--fontColorW);
     margin-right: 40px;
 }
+
+.menu_enlace:hover{
+    color: blueviolet;
+    transition:0.5s;
+}
