@@ -38,8 +38,8 @@ export class LibrosComponent implements OnInit {
   }
 
   public delete(inputId_libro:HTMLInputElement):void{
-    this.ServicioService.delete(inputId_libro.valueAsNumber)
-
+   this.ServicioService.delete(inputId_libro.valueAsNumber)
+  
   }
 
   ngOnInit(): void { }
