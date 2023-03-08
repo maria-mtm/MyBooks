@@ -6,7 +6,7 @@ import { Libro } from '../models/libro';
 })
 export class ServicioService {
 
-  public libros: Libro[];
+  private libros: Libro[];
 
   constructor() {
     this.libros = [
@@ -38,8 +38,8 @@ export class ServicioService {
 
   public delete(id_libro: number): boolean {
     for (let i = 0; i < this.libros.length; i++) {
-      this.libros[i].id_libro == id_libro
-      if ( this.libros.splice(i, 1)) {
+      if (this.libros[i].id_libro == id_libro ) {
+        this.libros.splice(i, 1)
         return true
       }
     }

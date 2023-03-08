@@ -29,7 +29,7 @@ export class LibrosComponent implements OnInit {
       inputPrecio.valueAsNumber,
       inputPhoto.value
     ))
-    console.log(this.ServicioService.libros)
+    console.log(this.ServicioService.getAll)
   }
 
   public getOne(inputIds_libro: HTMLInputElement): void {
