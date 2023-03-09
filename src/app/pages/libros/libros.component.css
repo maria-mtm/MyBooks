@@ -74,6 +74,7 @@
     width: 400px;
     border: 1px solid var(--primaryColor);
     border-radius: 5px;
+    text-align: center;
     
 }
 

@@ -9,7 +9,9 @@ import { FormularioRegistroComponent } from './component/formulario-registro/for
 import { RegistroComponent } from './pages/registro/registro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { LibrosComponent } from './pages/libros/libros.component';
-
+//hemos importado esto en el dia5
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,13 @@ import { LibrosComponent } from './pages/libros/libros.component';
     FormularioRegistroComponent,
     RegistroComponent,
     PerfilComponent,
-    LibrosComponent
+    LibrosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    //aqui de nuevo
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

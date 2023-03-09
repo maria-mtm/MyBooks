@@ -1,47 +1,70 @@
 import { Injectable } from '@angular/core';
 import { Libro } from '../models/libro';
+//hemos instalado esto en el dia5
+import { HttpClient } from '@angular/common/http';
+import { Usuario } from '../models/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioService {
 
+  private url = "http://localhost:3000/";
+
   public libros: Libro[];
 
-  constructor() {
-    this.libros = [
-      new Libro(1, 2, "Casita azul", "Carlos", 25, "https://imagenes.elpais.com/resizer/sMWeM3Z0awXbSkNaTMExLR_QNLU=/1200x0/arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/YC5XJK5X2DES4MGR2W3HWWS7JU.jpg"),
-      new Libro(2, 4, "Mis memorias", "Inma", 28, "https://thumbs.dreamstime.com/b/abra-el-libro-libros-del-libro-encuadernado-en-la-tabla-de-madera-fondo-de-la-educaci%C3%B3n-de-nuevo-escuela-copie-el-espacio-para-76106466.jpg")
-    ]
+
+  constructor(private http: HttpClient) {
+  
   }
+
+  // public register (usuario:Usuario){
+  //   this.http.post(this.url+"registro");
+  // }
+
+  // public login (usuario:Usuario){
+  //   return this.http.post(this.url+"login");
+  // }
+
+  // getLibro(id: number) {
+  //   return this.http.get(this.url + "/" + id)
+  // }
+
+  // getLibros(){
+  //   return this.http.get(this.url)
+  // }
+
+  // postLibros(newLibro: Libro) {
+  //   return this.http.post(this.url, newLibro)
+  // }
 
   //AQUI SE "CREAN LAS FUNCIONES"
 
-  public getAll(): Libro[] {
-    return this.libros
-  }
+  // public getAll(): Libro[] {
+  //   return this.libros
+  // }
 
 
-  public getOne(id_libro: number): Libro {
+  // public getOne(id_libro: number): Libro {
 
-    for (let i = 0; i < this.libros.length; i++) {
-      if (this.libros[i].id_libro === id_libro) {
-        return this.libros[i]
-      }
+  //   for (let i = 0; i < this.libros.length; i++) {
+  //     if (this.libros[i].id_libro === id_libro) {
+  //       return this.libros[i]
+  //     }
 
-    }
-  }
+  //   }
+  // }
 
-  public add(libro: Libro): void {
-    this.libros.push(libro)
-  }
+  // public add(libro: Libro): void {
+  //   this.libros.push(libro)
+  // }
 
-  public delete(id_libro: number): boolean {
-    for (let i = 0; i < this.libros.length; i++) {
-      this.libros[i].id_libro == id_libro
-      if ( this.libros.splice(i, 1)) {
-        return true
-      }
-    }
-  }
+  // public delete(id_libro: number): boolean {
+  //   for (let i = 0; i < this.libros.length; i++) {
+  //     if (this.libros[i].id_libro == id_libro ) {
+  //       this.libros.splice(i, 1)
+  //       return true
+  //     }
+  //   }
+  // }
 }

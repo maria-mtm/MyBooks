@@ -1,5 +1,5 @@
-<!-- <div class="main_formulario"> -->
-    <form class="formulario">
+
+    <!-- <form class="formulario">
         <h1 class="formulario_head">Registrate</h1>
         <hr>
         <div class="formulario_inputs">
@@ -12,5 +12,19 @@
             <input class="boton" onclick="" type="reset" value="Registrarse">
         </div>
 
+    </form> -->
+
+    <form class="formulario">
+        <h1 class="formulario_head">Login</h1>
+        <hr>
+        <div class="formulario_inputs">
+            <input type="number" placeholder='ID Usuario' #inputIdUsuario>
+            <input type="text" placeholder='Nombre' #inputNombre> 
+            <input type="text"  placeholder='Apellidos'#inputApellidos>
+            <input type="email"  placeholder='Correo'#inputCorreo>
+            <input type="text"  placeholder='foto' #inputFoto>
+        </div>
+        <div class="formulario_buttons">
+            <button class="boton" onclick=registrarse(inputIdUsuario,inputNombre,inputApellidos,inputCorreo,inputFoto)>Registrarse</button>
+        </div>
     </form>
-<!-- </div> -->
