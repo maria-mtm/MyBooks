@@ -47,7 +47,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--transparentBlack);
-    width: 460px;
+    min-width: 460px;
     min-height: 400px;
     border-radius: 5px;
     border:2px solid var(--primaryColor);
@@ -65,6 +65,7 @@
     border-radius: 5px;
     border:2px solid var(--primaryColor);
     padding:30px 30px 30px 30px;
+    gap:7px;
 }
 
 .form_addBooks input, .form_addBooks_search input{
@@ -81,10 +82,11 @@
 
 .AB_buttons{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    gap:10px;
 }
 
 .AB_buttons button{

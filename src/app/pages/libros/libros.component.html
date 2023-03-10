@@ -1,24 +1,15 @@
-<!-- <div>
-    <h2>LIBROS</h2>
-    <ul>
-        <li *ngFor="let librito of libros">
-            Titulo: {{librito.titulo}}  Autor: {{librito.autor}}
-        </li>
-    </ul>
-</div>
-{{libros[0].titulo}} -->
-
-<!-- <div *ngIf="libros.length<2; else esFalso">
-   Hay menos de 2
-</div>
-<ng-template #esFalso>
-    Hay igual o mas de 2
-</ng-template> -->
+<!--  -->
 <div class="main_libros">
     <div class="form_addBooks_search">
-        <input type="number" placeholder="Busca por ID Libro" #inputIds_libro />
+        <h2>Buscar/Eliminar libros:</h2>
+        <br>
+        
+        <input type="number" placeholder="ID Libro" #inputIds_libro />
+        <input type="number" placeholder="ID Usuario" #inputIds_user />
         <div class="AB_buttons">
-            <!-- <button on-click=getOne(inputIds_libro)>Buscar</button>  -->
+            <button type="reset" on-click=getOne(inputIds_libro,inputIds_user)>Mostrar Uno</button> 
+            <button type="reset" on-click=getAll(inputIds_libro)>Mostrar Todos</button> 
+            <button type="reset" on-click=delete(inputIds_libro)>Eliminar</button> 
         </div>
     </div>
 
@@ -34,7 +25,7 @@
     <div><input type="text" placeholder="Foto" #inputPhoto /></div>
 
     <div class="AB_buttons">
-        <!-- <button on-click=add(inputId_libro,inputId_usuario,inputTitulo,inputAutor,inputPrecio,inputPhoto)>Añadir</button> -->
+        <button type="reset" on-click=add(inputId_libro,inputId_usuario,inputTitulo,inputAutor,inputPrecio,inputPhoto)>Agregar</button>
     </div>
 </div>
 

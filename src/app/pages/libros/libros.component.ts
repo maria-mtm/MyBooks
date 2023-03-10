@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Libro } from 'src/app/models/libro';
-import { ServicioService } from 'src/app/shared/servicio.service';
+import { LibroService } from 'src/app/shared/libro.service';
 
 @Component({
   selector: 'app-libros',
@@ -10,37 +10,59 @@ import { ServicioService } from 'src/app/shared/servicio.service';
 export class LibrosComponent implements OnInit {
   public libros: Libro[];
 
-  constructor(public ServicioService: ServicioService) {
+  constructor(public apiService: LibroService) {
 
-    //estoy igualando la nueva variable libros al libros que hay en servicioService que ya contiene el array de Libros
-    // this.libros=this.ServicioService.libros
-    // this.libros = this.ServicioService.getAll()
+    this.apiService.libros;
 
   }
 
-  //AQUI SE "LLAMAN" LAS FUNCIONES CREADAS EN EL SERVICE
 
-  // public add(inputId_libro: HTMLInputElement, inputId_usuario: HTMLInputElement, inputTitulo: HTMLInputElement, inputAutor: HTMLInputElement, inputPrecio: HTMLInputElement, inputPhoto: HTMLInputElement) {
-  //   this.ServicioService.add(new Libro(
-  //     inputId_libro.valueAsNumber,
-  //     inputId_usuario.valueAsNumber,
-  //     inputTitulo.value,
-  //     inputAutor.value,
-  //     inputPrecio.valueAsNumber,
-  //     inputPhoto.value
-  //   ))
-  //   console.log(this.ServicioService.libros)
-  // }
+  public add(inputId_libro: HTMLInputElement, inputId_usuario: HTMLInputElement, inputTitulo: HTMLInputElement, inputAutor: HTMLInputElement, inputPrecio: HTMLInputElement, inputPhoto: HTMLInputElement) {
+    let newLibro: Libro = new Libro(
+      inputId_libro.valueAsNumber,
+      inputId_usuario.valueAsNumber,
+      inputTitulo.value,
+      inputAutor.value,
+      inputPrecio.valueAsNumber,
+      inputPhoto.value
+    )
+    this.apiService.add(newLibro).subscribe
+    ((data)=>
+    {
+      console.log(data);
+    })
+  }
 
-  // public getOne(inputIds_libro: HTMLInputElement): void {
-  //   this.libros = [this.ServicioService.getOne(inputIds_libro.valueAsNumber)];
+  public getOne(inputIds_user: HTMLInputElement,inputIds_libro: HTMLInputElement ){
+// let libro : Libro = new Libro (inputIds_libro.valueAsNumber,inputIds_user.valueAsNumber,"","",0,"")
+this.apiService.getOne(inputIds_user.valueAsNumber,inputIds_libro.valueAsNumber).subscribe((data:Libro)=>
+{ 
+  console.log(data); 
+  this.apiService.libros=data[0] //acceder a un elemento del array
+}
+)}
 
-  // }
+  public getAll(inputIds_user: HTMLInputElement) {
+    // this.libros = [this.ServicioService.getOne(inputIds_libro.valueAsNumber)];
+    // let libro : Libro = new Libro (0,inputIds_user.valueAsNumber,"","",0,"")
+    this.apiService.getAll(inputIds_user.valueAsNumber).subscribe((data:Libro)=>
+    { 
+      console.log(data); 
+      this.apiService.libros=data[0]
+    }
+    )
+  }
 
-  // public delete(inputId_libro:HTMLInputElement):void{
-  //   this.ServicioService.delete(inputId_libro.valueAsNumber)
-
-  // }
+  public delete(inputIds_libro:HTMLInputElement){
+    // this.ServicioService.delete(inputId_libro.valueAsNumber)
+    // let libro : Libro = new Libro (inputIds_libro.valueAsNumber,0,"","",0,"")
+    this.apiService.delete(inputIds_libro.valueAsNumber).subscribe((data:Libro)=>
+    { 
+      console.log(data); 
+      this.apiService.libros=data[0]
+    }
+    )
+  }
 
   ngOnInit(): void { }
 }

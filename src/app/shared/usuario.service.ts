@@ -32,9 +32,7 @@ export class UsuarioService {
 }
 
 
-    // postLibros(newLibro: Libro) {
-  //   return this.http.post(this.url, newLibro)
-  // }
+
 
   
 
