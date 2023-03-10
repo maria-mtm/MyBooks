@@ -59,7 +59,7 @@ this.apiService.getOne(inputIds_user.valueAsNumber,inputIds_libro.valueAsNumber)
     this.apiService.delete(inputIds_libro.valueAsNumber).subscribe((data:Libro)=>
     { 
       console.log(data); 
-      this.apiService.libros=data[0]
+       this.apiService.libros=data[0]
     }
     )
   }
