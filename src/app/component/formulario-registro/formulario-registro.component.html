@@ -15,7 +15,7 @@
     </form> -->
 
     <form class="formulario">
-        <h1 class="formulario_head">Login</h1>
+        <h1 class="formulario_head">Registro</h1>
         <hr>
         <div class="formulario_inputs">
             <input type="number" placeholder='ID Usuario' #inputIdUsuario>
@@ -25,6 +25,6 @@
             <input type="text"  placeholder='foto' #inputFoto>
         </div>
         <div class="formulario_buttons">
-            <button class="boton" onclick=registrarse(inputIdUsuario,inputNombre,inputApellidos,inputCorreo,inputFoto)>Registrarse</button>
+            <button class="boton" type="reset" on-click="registrarse(inputIdUsuario,inputNombre,inputApellidos,inputCorreo,inputFoto)">Registrarse</button>
         </div>
     </form>
