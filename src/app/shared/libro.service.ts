@@ -17,8 +17,10 @@ export class LibroService {
     // this.libros=null;
 
    }
- getAll(userId: number) :Observable <Libro> {
-    return this.http.get<Libro>(this.url + userId)
+//  getAll(userId: number) :Observable <Libro> {
+  getAll(userId: number) {
+     return this.http.get(this.url + userId)
+    // return this.http.get<Libro>(this.url + userId)
   }
 
   getOne(userId:number, id_libro:number):Observable <Libro>{

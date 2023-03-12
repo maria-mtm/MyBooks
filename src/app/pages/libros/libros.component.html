@@ -4,11 +4,11 @@
         <h2>Buscar/Eliminar libros:</h2>
         <br>
         
-        <input type="number" placeholder="ID Libro" #inputIds_libro />
-        <input type="number" placeholder="ID Usuario" #inputIds_user />
+        <input type="number" placeholder="ID Libro (Mostrar Uno o Eliminar)" #inputIds_libro />
+        <input type="number" placeholder="ID Usuario (Mostrar Todos o Uno)" #inputIds_user />
         <div class="AB_buttons">
             <button type="reset" on-click=getOne(inputIds_libro,inputIds_user)>Mostrar Uno</button> 
-            <button type="reset" on-click=getAll(inputIds_libro)>Mostrar Todos</button> 
+            <button type="reset" on-click=getAll(inputIds_user)>Mostrar Todos</button> 
             <button type="reset" on-click=delete(inputIds_libro)>Eliminar</button> 
         </div>
     </div>

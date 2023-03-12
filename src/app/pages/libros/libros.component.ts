@@ -44,11 +44,12 @@ this.apiService.getOne(inputIds_user.valueAsNumber,inputIds_libro.valueAsNumber)
 
   public getAll(inputIds_user: HTMLInputElement) {
     // this.libros = [this.ServicioService.getOne(inputIds_libro.valueAsNumber)];
-    // let libro : Libro = new Libro (0,inputIds_user.valueAsNumber,"","",0,"")
-    this.apiService.getAll(inputIds_user.valueAsNumber).subscribe((data:Libro)=>
+    let libro : Libro = new Libro (0,inputIds_user.valueAsNumber,"","",0,"")
+    this.apiService.getAll(inputIds_user.valueAsNumber).subscribe((data:Libro [])=>
     { 
       console.log(data); 
-      this.apiService.libros=data[0]
+      // this.libros=data[0]
+      this.apiService.libros=data
     }
     )
   }
