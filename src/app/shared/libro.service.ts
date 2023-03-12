@@ -17,24 +17,25 @@ export class LibroService {
     // this.libros=null;
 
    }
-//  getAll(userId: number) :Observable <Libro> {
-  getAll(userId: number) {
-     return this.http.get(this.url + userId)
+ getAll(userId: number) :Observable <Object> {
+     return this.http.get<Object[]>(this.url+"id_usuario=2"+userId)
     // return this.http.get<Libro>(this.url + userId)
   }
 
-  getOne(userId:number, id_libro:number):Observable <Libro>{
-    return this.http.get<Libro>(this.url +id_libro+"&"+userId)
+  getOne(userId:number, id_libro:number):Observable <Object>{
+    // return this.http.get(this.url +id_libro+"&"+userId)
+    return this.http.get<Object>(this.url+"?id_libro="+id_libro+"&id_usuario="+userId)
+    
     // libros?id_libro=2&id_usuario=21
   }
 
-  add(libro:Libro):Observable <Libro>{
-    return this.http.post<Libro>(this.url+"libro", libro);
+  add(libro:Libro):Observable <Object>{
+    return this.http.post<Object[]>(this.url+"libro", libro);
 
   }
 
-  delete(id_libro:number):Observable <{}>{
-    return this.http.delete(this.url + id_libro)
+  delete(id_libro:number):Observable <Object>{
+    return this.http.delete<Object>(this.url,{body:{id_libro:id_libro}})
   }
 
 
